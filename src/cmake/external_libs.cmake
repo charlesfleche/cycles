@@ -556,3 +556,11 @@ endif()
 
 unset(CMAKE_IGNORE_PATH)
 unset(_cycles_lib_dir)
+
+###########################################################################
+# USD
+###########################################################################
+
+if(WITH_CYCLES_STANDALONE)
+  include(${PXR_CONFIG_CMAKE})
+endif()

@@ -60,8 +60,12 @@ include_directories(SYSTEM ${INC_SYS})
 # Application build targets
 
 if(WITH_CYCLES_STANDALONE)
+  list(APPEND LIBRARIES usd)
+
   set(SRC
     cycles_standalone.cpp
+    cycles_usd.cpp
+    cycles_usd.h
     cycles_xml.cpp
     cycles_xml.h
   )

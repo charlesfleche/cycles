@@ -41,6 +41,7 @@
 #endif
 
 #include "app/cycles_xml.h"
+#include "app/cycles_usd.h"
 
 CCL_NAMESPACE_BEGIN
 
@@ -129,7 +130,10 @@ static void scene_init()
   options.scene = new Scene(options.scene_params, options.session->device);
 
   /* Read XML */
-  xml_read_file(options.scene, options.filepath.c_str());
+  /* xml_read_file(options.scene, options.filepath.c_str()); */
+
+  /* Read USD */
+  usd_read_file(options.scene, options.filepath.c_str());
 
   /* Camera width/height override? */
   if (!(options.width == 0 || options.height == 0)) {
